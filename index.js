@@ -45,4 +45,6 @@ inputEl.addEventListener("keyup", (e) => {
 
 document.getElementById("clear-button").addEventListener("click", () => {
   inputEl.value = "";
+  infoTextEl.style.display = "block";
+  meaningContainerEl.style.display = "none";
 });
