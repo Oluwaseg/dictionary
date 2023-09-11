@@ -47,12 +47,8 @@ inputEl.addEventListener("keyup", (e) => {
 
 clearButton.addEventListener("click", () => {
   inputEl.value = "";
-<<<<<<< HEAD
   infoTextEl.textContent = "";
   meaningContainerEl.style.display = "none";
-=======
-  meaningContainerEl.style.display = "none"; 
-  infoTextEl.textContent = "Type a word and press enter"; 
-  audioEl.style.display = "none"; 
->>>>>>> be133424e2786ef5f2b9f871e3d892638b357b90
+  infoTextEl.textContent = "Type a word and press enter";
+  audioEl.style.display = "none";
 });
