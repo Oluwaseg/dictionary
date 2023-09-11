@@ -4,6 +4,7 @@ const meaningContainerEl = document.getElementById("meaning-container");
 const titleEl = document.getElementById("title");
 const meaningEl = document.getElementById("meaning");
 const audioEl = document.getElementById("audio");
+const clearButton = document.getElementById("clear-button");
 
 async function fetchAPI(word) {
   try {
@@ -43,8 +44,9 @@ inputEl.addEventListener("keyup", (e) => {
   }
 });
 
-document.getElementById("clear-button").addEventListener("click", () => {
+clearButton.addEventListener("click", () => {
   inputEl.value = "";
-  infoTextEl.style.display = "block";
-  meaningContainerEl.style.display = "none";
+  meaningContainerEl.style.display = "none"; 
+  infoTextEl.textContent = "Type a word and press enter"; 
+  audioEl.style.display = "none"; 
 });
