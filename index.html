@@ -9,48 +9,96 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <title>English Dictionary</title>
     <style>
-      body {
+      body,
+      h1,
+      h2,
+      p {
         margin: 0;
         padding: 0;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background: rgb(96, 150, 180);
+        background: radial-gradient(
+          circle,
+          rgba(96, 150, 180, 1) 0%,
+          rgba(147, 191, 207, 1) 100%
+        );
+        line-height: 1.6;
         display: flex;
-        min-height: 100vh;
         justify-content: center;
         align-items: center;
-        background: #4776e6; /* fallback for old browsers */
-        background: -webkit-linear-gradient(
-          to right,
-          #8e54e9,
-          #4776e6
-        ); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(
-          to right,
-          #8e54e9,
-          #4776e6
-        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        min-height: 100vh;
       }
-      .center {
+
+      .container-lg {
         background-color: rgba(255, 255, 255, 0.6);
         padding: 28px;
         border-radius: 15px;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
         width: 90%;
-        margin: 10px;
         max-width: 450px;
         text-align: center;
         font-size: 18px;
         font-weight: 500;
       }
+
       .heading {
         font-size: 28px;
+        margin: 10px;
       }
+
       .input {
-        border-color: rgba(255, 255, 255, 0.6);
+        border-color: rgba(255, 255, 255, 0.2);
         font-size: 16px;
+        transition: border-color 0.3s ease;
+        width: 100%;
+        padding: 10px;
       }
+
+      .input:hover {
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+
+      #clear-button {
+        background-color: #8e54e9;
+        color: white;
+        border: none;
+        transition: background-color 0.3s ease;
+        margin: 5px;
+      }
+
+      #clear-button:hover {
+        background-color: #4776e6;
+        cursor: pointer;
+      }
+
       .meaning-container {
         display: none;
+      }
+
+      @media (max-width: 768px) {
+        .container-lg {
+          width: 100%;
+          margin: 0;
+          padding: 20px;
+        }
+
+        .heading {
+          font-size: 24px;
+        }
+
+        .input {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -67,6 +115,15 @@
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
         />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="clear-button"
+          >
+            Clear
+          </button>
+        </div>
       </div>
 
       <p class="info-text" id="info-text">Type a word and press enter</p>
